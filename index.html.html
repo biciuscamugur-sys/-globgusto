@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>TerraAtlas 3.5 - Explorator Global</title>
+    <style>
+        body {
+            background-color: #001f3f; /* Intense Blue */
+            color: #FFD700; /* Gold */
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { font-size: 3rem; text-shadow: 2px 2px 4px #000; }
+        .controls {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        button {
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            background-color: #2E8B57; /* Green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background-color: #3CB371;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>TerraAtlas 3.5</h1>
+    <div class="info">Sistem pregătit pentru explorare intensă.</div>
+    
+    <div class="controls">
+        <button onclick="alert('Explorare: Căutare regiune nouă...')">Random Explore</button>
+        <button onclick="alert('Sistem resetat.')">Globe Reset</button>
+        <button onclick="alert('Vânt: Activare fluxuri...')">Wind Visualization</button>
+        <button onclick="alert('Mod Zi/Noapte: Dinamic.')">Day/Night Mode</button>
+    </div>
+
+    <script>
+        console.log("TerraAtlas 3.5 a pornit cu setările tale: Intensitate Blue, Gold & Green themes, Fonturi Elegante.");
+    </script>
+</body>
+</html>
