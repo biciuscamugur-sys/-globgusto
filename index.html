@@ -1,60 +1,117 @@
 
+
   <!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraAtlas 3.5 - Explorator Global</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-color: #001f3f;
             color: #FFD700;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Georgia', serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
         }
-        h1 { font-size: 3rem; text-shadow: 2px 2px 4px #000; }
+        h1 {
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
+        }
+        .info {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
         .controls {
-            margin-top: 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
+            max-width: 500px;
+            width: 100%;
         }
         button {
-            padding: 15px 25px;
-            font-size: 1.2rem;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
             background-color: #2E8B57;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         button:hover {
             transform: scale(1.05);
             background-color: #3CB371;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
         }
-        .info {
-            margin-top: 20px;
-            font-size: 1.5rem;
-            text-align: center;
+        button:active {
+            transform: scale(0.95);
+        }
+        .status {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.05);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,215,0,0.2);
         }
     </style>
 </head>
 <body>
-    <h1>TerraAtlas 3.5</h1>
+
+    <h1>🌍 TerraAtlas 3.5</h1>
     <div class="info">Sistem pregătit pentru explorare intensă.</div>
+
     <div class="controls">
-        <button onclick="alert('Explorare: Căutare regiune nouă...')">Random Explore</button>
-        <button onclick="alert('Sistem resetat.')">Globe Reset</button>
-        <button onclick="alert('Vânt: Activare fluxuri...')">Wind Visualization</button>
-        <button onclick="alert('Mod Zi/Noapte: Dinamic.')">Day/Night Mode</button>
+        <button id="exploreBtn">🗺️ Random Explore</button>
+        <button id="resetBtn">🔄 Globe Reset</button>
+        <button id="windBtn">💨 Wind Visualization</button>
+        <button id="daynightBtn">🌓 Day/Night Mode</button>
     </div>
+
+    <div class="status" id="statusMessage">🌐 Sistem activ. Așteaptă comenzi...</div>
+
     <script>
-        console.log("TerraAtlas 3.5 a pornit!");
+        const statusEl = document.getElementById('statusMessage');
+
+        function showMessage(text, emoji = '✅') {
+            statusEl.textContent = `${emoji} ${text}`;
+        }
+
+        document.getElementById('exploreBtn').addEventListener('click', function() {
+            showMessage('Explorare: Căutare regiune nouă...', '🗺️');
+            // Poți înlocui cu un alert dacă vrei:
+            // alert('Explorare: Căutare regiune nouă...');
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            showMessage('Sistem resetat.', '🔄');
+        });
+
+        document.getElementById('windBtn').addEventListener('click', function() {
+            showMessage('Vânt: Activare fluxuri...', '💨');
+        });
+
+        document.getElementById('daynightBtn').addEventListener('click', function() {
+            showMessage('Mod Zi/Noapte: Dinamic.', '🌓');
+        });
+
+        console.log('✅ TerraAtlas 3.5 a pornit cu succes!');
     </script>
+
 </body>
 </html>
